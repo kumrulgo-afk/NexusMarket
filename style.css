@@ -1,0 +1,409 @@
+```css
+/* =========================================
+   NexusMarket - Custom Responsive CSS
+   ========================================= */
+
+/* ---------- Base ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Prevent images from overflowing */
+img {
+    max-width: 100%;
+}
+
+/* ---------- Scrollbar ---------- */
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+    /* Header */
+    header .max-w-7xl {
+        gap: 12px;
+    }
+
+    /* Hero */
+    section h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Product cards */
+    #productGrid {
+        gap: 1rem;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- Header ---------- */
+
+    header .max-w-7xl {
+        height: auto;
+        min-height: 70px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        gap: 10px;
+    }
+
+    /*
+       Mobile-এ logo text hide হয়ে যাবে,
+       তাই শুধু icon থাকবে।
+    */
+
+    header a:first-child {
+        flex-shrink: 0;
+    }
+
+    header a:first-child > span:first-child {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* Search smaller */
+    #searchInput {
+        min-width: 0;
+        font-size: 13px;
+        padding-left: 38px;
+        padding-right: 32px;
+    }
+
+    /* Header buttons */
+    #themeToggle,
+    #cartBtn {
+        padding: 9px;
+    }
+
+    /* Cart text hide */
+    #cartBtn span:not(#cartCountBadge) {
+        display: none;
+    }
+
+
+    /* ---------- Hero Section ---------- */
+
+    section.bg-gradient-to-r {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    section h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    section p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    /* Hero category buttons */
+    #quickCategoryPills {
+        justify-content: center;
+    }
+
+    #quickCategoryPills button {
+        font-size: 11px;
+        padding: 7px 12px;
+    }
+
+
+    /* ---------- Main Content ---------- */
+
+    main {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+
+    /* ---------- Filter Box ---------- */
+
+    #categoryFilters {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 6px;
+    }
+
+    #categoryFilters button {
+        flex-shrink: 0;
+    }
+
+    /* Price + sort */
+    #priceRange {
+        width: 100%;
+    }
+
+    #sortSelect {
+        width: 100%;
+    }
+
+
+    /* ---------- Product Grid ---------- */
+
+    #productGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Product image */
+    #productGrid .relative.h-52 {
+        height: 230px;
+    }
+
+    /* Product card padding */
+    #productGrid .p-5 {
+        padding: 1rem;
+    }
+
+
+    /* ---------- Quick View Modal ---------- */
+
+    #productModal {
+        padding: 12px;
+    }
+
+    #modalContainer {
+        max-height: 92vh;
+        overflow-y: auto;
+        padding: 1.25rem;
+        border-radius: 1.25rem;
+    }
+
+    #modalContent {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    #modalContent > div:first-child {
+        height: 220px;
+    }
+
+
+    /* ---------- Cart Drawer ---------- */
+
+    #cartPanel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #cartItemsList {
+        padding: 1rem;
+    }
+
+
+    /* ---------- Toast ---------- */
+
+    #toastContainer {
+        left: 12px;
+        right: 12px;
+        bottom: 15px;
+    }
+
+    #toastContainer > div {
+        width: 100%;
+        max-width: none;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    footer .max-w-7xl {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    footer form {
+        width: 100%;
+    }
+
+    footer form input {
+        min-width: 0;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    /* Header */
+    header .max-w-7xl {
+        gap: 6px;
+    }
+
+    header a:first-child > span:first-child {
+        width: 36px;
+        height: 36px;
+    }
+
+    #searchInput {
+        font-size: 12px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+
+    #themeToggle,
+    #cartBtn {
+        padding: 8px;
+    }
+
+
+    /* Hero */
+    section h1 {
+        font-size: 1.7rem;
+    }
+
+    section p {
+        font-size: 0.82rem;
+    }
+
+    #quickCategoryPills {
+        gap: 6px;
+    }
+
+    #quickCategoryPills button {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+
+    /* Filters */
+    .filter-tab {
+        font-size: 12px !important;
+        padding: 8px 12px !important;
+    }
+
+
+    /* Product */
+    #productGrid .relative.h-52 {
+        height: 210px;
+    }
+
+    #productGrid h3 {
+        font-size: 14px;
+    }
+
+    #productGrid .text-xl {
+        font-size: 18px;
+    }
+
+
+    /* Footer newsletter */
+    footer form {
+        flex-direction: column;
+    }
+
+    footer form button {
+        width: 100%;
+    }
+
+
+    /* Cart */
+    #cartPanel > div {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+
+/* =========================================
+   TOUCH DEVICES
+   ========================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /*
+       Mobile-এ hover-এর উপর নির্ভর না করে
+       Quick View button সবসময় visible রাখি।
+    */
+
+    #productGrid .group button[title="Quick View"] {
+        opacity: 1;
+    }
+
+    /*
+       Touch device-এ hover transform বন্ধ।
+    */
+
+    #productGrid .group:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+button,
+input,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   VERY SMALL SCREEN FIX
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    header .max-w-7xl {
+        gap: 4px;
+    }
+
+    #searchInput {
+        font-size: 11px;
+    }
+
+    #themeToggle,
+    #cartBtn {
+        padding: 7px;
+    }
+
+    section h1 {
+        font-size: 1.5rem;
+    }
+
+    #productGrid .relative.h-52 {
+        height: 190px;
+    }
+}
+```
